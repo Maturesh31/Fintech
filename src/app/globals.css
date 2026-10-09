@@ -1,0 +1,112 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #f6f8fb;
+  --surface: #ffffff;
+  --surface-2: #eff3f7;
+  --ink: #0f172a;
+  --muted: #475569;
+  --line: #d9e1ea;
+  --brand: #0f766e;
+  --brand-strong: #115e59;
+  --brand-soft: #e3f4f0;
+  --amber: #b45309;
+  --amber-soft: #fef3e2;
+  --neg: #c2410c;
+  --pos: #047857;
+  --indigo: #4338ca;
+  --on-brand: #ffffff;
+  --hero: #eaf6f2;
+  --hero-ink: #0f172a;
+  --shadow: 0 1px 2px rgb(15 23 42 / 0.05), 0 6px 20px -10px rgb(15 23 42 / 0.12);
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-brand: var(--brand);
+  --color-brand-strong: var(--brand-strong);
+  --color-brand-soft: var(--brand-soft);
+  --color-amber: var(--amber);
+  --color-amber-soft: var(--amber-soft);
+  --color-neg: var(--neg);
+  --color-pos: var(--pos);
+  --color-indigo: var(--indigo);
+  --color-on-brand: var(--on-brand);
+  --color-hero: var(--hero);
+  --color-hero-ink: var(--hero-ink);
+  --font-sans: var(--font-geist-sans), system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+  /* slightly larger small text for readability */
+  --text-xs: 0.8125rem;
+  --text-xs--line-height: 1.25rem;
+  --text-sm: 0.9375rem;
+  --text-sm--line-height: 1.45rem;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: light;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+.num {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+}
+
+/* light highlight panel used at the top of each page */
+.panel-hero {
+  background: linear-gradient(135deg, #e3f4f0 0%, #eef2ff 100%);
+  border: 1px solid #cfe7e0;
+  border-radius: 24px;
+  color: var(--ink);
+}
+
+.skeleton {
+  background: linear-gradient(90deg, var(--surface-2), var(--line), var(--surface-2));
+  background-size: 200% 100%;
+  animation: shimmer 1.4s infinite;
+  border-radius: 10px;
+}
+
+@keyframes shimmer {
+  to {
+    background-position: -200% 0;
+  }
+}
+
+.recharts-text {
+  fill: var(--muted);
+  font-size: 13px;
+}
+
+:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
